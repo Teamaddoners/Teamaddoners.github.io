@@ -1,4 +1,4 @@
-/* Basic reset */
+/* Reset and Base Styling */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +6,16 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #0a0a0a;
     color: #fff;
 }
 
-/* Header and navigation styling */
+/* Header and Navigation Styling */
 header {
     background-color: #1a1a1a;
     padding: 20px;
+    border-bottom: 2px solid #f39c12;
 }
 
 .container {
@@ -26,15 +27,17 @@ header {
 h1 {
     font-size: 24px;
     text-align: left;
+    color: #f39c12;
 }
 
-/* Hamburger styling */
+/* Hamburger Icon for Mobile */
 .hamburger {
     cursor: pointer;
     display: none; /* Hidden by default */
     flex-direction: column;
     gap: 5px;
     width: 30px;
+    margin-left: auto;
 }
 
 .hamburger div {
@@ -42,23 +45,7 @@ h1 {
     background-color: #fff;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
-}
-
-/* Mobile nav */
+/* Mobile Nav */
 .mobile-nav {
     display: none;
     position: fixed;
@@ -68,7 +55,7 @@ nav ul li a:hover {
     height: 100%;
     width: 70%;
     padding-top: 50px;
-    z-index: 1000; /* Keep it above other content */
+    z-index: 1000;
 }
 
 .mobile-nav ul {
@@ -80,47 +67,104 @@ nav ul li a:hover {
     padding: 10px 0;
 }
 
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.mobile-nav ul li a:hover {
+    color: #f39c12;
+}
+
 .mobile-nav.show {
     display: block;
 }
 
-/* Desktop nav */
+/* Desktop Nav */
 .desktop-nav {
     display: none;
 }
 
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.desktop-nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Media Queries for Responsive Design */
 @media (min-width: 769px) {
     .hamburger {
-        display: none; /* Hide hamburger on larger screens */
+        display: none;
     }
 
     .desktop-nav {
-        display: block; /* Show desktop nav on larger screens */
+        display: block;
     }
 }
 
-/* Show mobile nav and hamburger on small screens */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex; /* Show hamburger on mobile */
+        display: flex;
     }
 
     .desktop-nav {
-        display: none; /* Hide desktop nav on mobile */
+        display: none;
     }
 }
 
-/* Welcome section */
+/* Welcome Section Styling */
 #welcome {
     text-align: center;
     padding: 50px 20px;
     background-color: #292929;
     margin-top: 20px;
+    border: 1px solid #f39c12;
+    border-radius: 8px;
 }
 
+#welcome h2 {
+    font-size: 28px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+#welcome p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Services Section */
 #services {
     padding: 50px 20px;
     background-color: #333;
+    border: 1px solid #f39c12;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#services h2 {
+    font-size: 28px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+#services ul {
+    list-style: none;
+}
+
+#services ul li {
+    margin-bottom: 10px;
 }
 
 button.service-button {
@@ -129,8 +173,18 @@ button.service-button {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 button.service-button:hover {
     background-color: #e67e22;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-top: 2px solid #f39c12;
 }
