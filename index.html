@@ -82,7 +82,7 @@
 
         serviceButton.addEventListener('click', function () {
             isMenuVisible = !isMenuVisible; // Toggle the visibility state
-            serviceMenu.classList.toggle('show', isMenuVisible); // Show or hide based on state
+            serviceMenu.hidden = !isMenuVisible; // Show or hide based on state
             serviceButton.setAttribute('aria-expanded', isMenuVisible); // Update ARIA attribute
         });
 
@@ -90,7 +90,7 @@
         document.addEventListener('click', function (event) {
             if (!serviceButton.contains(event.target) && !serviceMenu.contains(event.target)) {
                 isMenuVisible = false;
-                serviceMenu.classList.remove('show'); // Hide if clicked outside
+                serviceMenu.hidden = true; // Hide if clicked outside
                 serviceButton.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
             }
         });
