@@ -177,19 +177,51 @@ button.service-button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    position: relative; /* Position for animation */
 }
 
 button.service-button:hover {
-    background-color: green;
+    background-color: darkgreen; /* Darker shade on hover for visual feedback */
 }
 
+/* Service Menu Styles */
 .service-menu {
     margin-top: 20px;
+    max-height: 0; /* Collapsed state */
+    opacity: 0; /* Hidden state */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow when hidden */
+}
+
+.service-menu.show {
+    max-height: 500px; /* Adjust as necessary for your menu items */
+    opacity: 1; /* Fully visible when expanded */
+}
+
+/* Optional: Styling for the menu items */
+.service-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-menu ul li {
+    padding: 10px;
+    background-color: #444; /* Background color for the menu items */
+    border-bottom: 1px solid green; /* Border between items */
+}
+
+.service-menu ul li a {
+    color: green; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.service-menu ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #fff; /* Change footer background to white */
+    background-color: #1a1a1a; /* Changed footer background to dark */
     padding: 20px;
     text-align: center;
     border-top: 2px solid green; /* Change border color to green */
