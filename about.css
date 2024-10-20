@@ -26,64 +26,6 @@ h1 {
     color: #4caf50; /* Bright green for title */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Hamburger Menu Styles */
-.hamburger {
-    display: none; /* Hidden by default on desktop */
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    margin-left: auto; /* Align right */
-}
-
-.hamburger div {
-    height: 3px;
-    background-color: green;
-}
-
-/* Mobile Navigation Styles */
-.mobile-nav {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.mobile-nav.show {
-    display: block; /* Show when toggled */
-}
-
-.mobile-nav ul {
-    flex-direction: column;
-}
-
-.mobile-nav ul li {
-    padding: 10px 20px;
-}
-
-.mobile-nav a {
-    color: #4caf50; /* Bright green for links */
-    text-decoration: none;
-}
-
 /* Section Styles */
 h2, h3 {
     color: #4caf50; /* Bright green for headings */
@@ -97,14 +39,14 @@ section {
 }
 
 /* Team Members Section */
-.team-members {
+.team-profiles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.member {
-    background-color: #3b3b3b; /* Slightly lighter background for members */
+.profile {
+    background-color: #3b3b3b; /* Slightly lighter background for profiles */
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
@@ -112,29 +54,29 @@ section {
     flex: 1 1 calc(30% - 20px); /* Responsive sizing */
 }
 
-.member img {
-    width: 10px; /* Fixed size for member images */
-    height: 10px; /* Fixed size for member images */
+.profile img {
+    width: 100px; /* Fixed size for member images */
+    height: 100px; /* Fixed size for member images */
     border-radius: 50%; /* Circular images */
 }
 
 /* Social Links */
-.socials {
+.social-links {
     margin: 20px 0;
 }
 
-.socials a {
+.social-links a {
     color: #4caf50; /* Bright green for social links */
     text-decoration: none;
     margin-right: 15px;
 }
 
-.socials a:hover {
+.social-links a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
 /* Button Styles */
-.back-button {
+.home-button {
     background-color: #4caf50; /* Green button background */
     color: #fff; /* White text */
     border: none;
@@ -143,7 +85,7 @@ section {
     cursor: pointer;
 }
 
-.back-button:hover {
+.home-button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
@@ -156,15 +98,7 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide desktop nav */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger on mobile */
-    }
-
-    .member {
-        flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
+    .profile {
+        flex: 1 1 calc(45% - 20px); /* Adjust profile size for smaller screens */
     }
 }
