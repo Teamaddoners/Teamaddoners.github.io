@@ -128,13 +128,13 @@ h1 {
     padding: 50px 20px;
     background-color: #292929;
     margin-top: 20px;
-    border: 1px solid green; /* Change border color to green */
+    border: 2px solid green; /* Change border color to green */
     border-radius: 8px;
 }
 
 #welcome h2 {
     font-size: 28px;
-    color: #4caf50; /* Green color for headings remains */
+    color: green; /* Change heading color to green */
     margin-bottom: 20px;
 }
 
@@ -147,12 +147,51 @@ h1 {
 #services {
     padding: 50px 20px;
     background-color: #333;
-    border: 1px solid green; /* Change border color to green */
+    border: 2px solid green; /* Change border color to green */
     border-radius: 8px;
     margin-top: 20px;
 }
 
 #services h2 {
     font-size: 28px;
-    color: #4caf50
-    
+    color: green; /* Change heading color to green */
+    margin-bottom: 20px;
+}
+
+#services ul {
+    list-style: none;
+}
+
+#services ul li {
+    margin-bottom: 10px;
+}
+
+button.service-button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.service-button:hover {
+    background-color: #e67e22;
+}
+
+.service-menu {
+    margin-top: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid green; /* Change border color to green */
+}
+
+footer p {
+    margin: 0;
+}
