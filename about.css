@@ -113,8 +113,8 @@ section {
 }
 
 .member img {
-    width: 100px; /* Fixed size for member images */
-    height: 100px; /* Fixed size for member images */
+    width: 10px; /* Fixed size for member images */
+    height: 10px; /* Fixed size for member images */
     border-radius: 50%; /* Circular images */
 }
 
