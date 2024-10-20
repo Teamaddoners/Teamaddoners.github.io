@@ -10,7 +10,20 @@
     <header>
         <div class="container">
             <h1>Team Addoners</h1>
-            <nav>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#projects">Explore Projects</a></li>
+                </ul>
+            </nav>
+            <nav class="mobile-nav" id="mobile-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -43,7 +56,6 @@
                     <p>Name 3</p>
                     <p>Role</p>
                 </div>
-                <!-- Add more members as needed -->
             </div>
 
             <h3>Connect With Us</h3>
@@ -71,13 +83,10 @@
             window.location.href = 'index.html'; // Redirect to the homepage
         });
 
-        // If you plan to add more interactivity in the future, you can structure your code like this
-        function init() {
-            // Initialize any event listeners or functions here
-        }
-
-        // Run the init function when the document is ready
-        document.addEventListener('DOMContentLoaded', init);
+        // Hamburger menu functionality
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobile-nav').classList.toggle('show');
+        });
     </script>
 </body>
 </html>
