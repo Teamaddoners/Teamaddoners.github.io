@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Addoners</title>
-    <link rel="website icon" type="jpg"
-        href="downloadfile-6~2.jpg">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Additional Styles for Service Modal */
@@ -43,6 +41,30 @@
             font-size: 18px;
             cursor: pointer;
             margin-top: 10px;
+        }
+
+        .explore-button {
+            background-color: green; /* Button color */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .toggle-services {
+            background-color: green; /* Button color */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            display: block; /* Initially show service list */
         }
     </style>
 </head>
@@ -84,7 +106,8 @@
         <section id="services" class="container">
             <h2>Our Services</h2>
             <p>We offer a variety of services, including:</p>
-            <ul>
+            <button class="toggle-services">Show/Hide Services</button>
+            <ul class="service-list">
                 <li><button class="service-button" data-service="texture-packs">Texture Packs</button></li>
                 <li><button class="service-button" data-service="minecraft-builds">Minecraft Builds/Maps</button></li>
                 <li><button class="service-button" data-service="shaderpacks">Shaderpacks</button></li>
@@ -100,6 +123,7 @@
         <div class="service-modal" id="service-modal">
             <h3 id="modal-title"></h3>
             <p id="modal-description"></p>
+            <button class="explore-button" id="explore-button" onclick="exploreService()">Explore</button>
             <button class="close-modal" id="close-modal">Close</button>
         </div>
     </main>
@@ -118,51 +142,69 @@
         const modalDescription = document.getElementById('modal-description');
         const modalOverlay = document.getElementById('modal-overlay');
         const closeModal = document.getElementById('close-modal');
+        const exploreButton = document.getElementById('explore-button');
+        const serviceList = document.querySelector('.service-list');
+        const toggleServicesButton = document.querySelector('.toggle-services');
 
         serviceButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const service = button.getAttribute('data-service');
                 let title = '';
                 let description = '';
+                let url = '';
 
                 // Set title and description based on selected service
                 switch(service) {
                     case 'texture-packs':
                         title = 'Texture Packs';
                         description = 'Explore our high-quality texture packs designed to enhance your Minecraft experience.';
+                        url = 'texture-packs.html'; // URL for redirect
                         break;
                     case 'minecraft-builds':
                         title = 'Minecraft Builds/Maps';
                         description = 'Check out our creative builds and maps available for download.';
+                        url = 'minecraft-builds.html'; // URL for redirect
                         break;
                     case 'shaderpacks':
                         title = 'Shaderpacks';
                         description = 'Discover our stunning shader packs that add realistic lighting and effects.';
+                        url = 'shaderpacks.html'; // URL for redirect
                         break;
                     case 'player-skins':
                         title = 'Minecraft Player Skins';
                         description = 'Customize your character with our unique player skins.';
+                        url = 'player-skins.html'; // URL for redirect
                         break;
                     case 'mods':
                         title = 'Mods';
                         description = 'Find a variety of mods to enhance your gameplay.';
+                        url = 'mods.html'; // URL for redirect
                         break;
                     case 'modpacks':
                         title = 'Modpacks';
                         description = 'Download our curated modpacks for a complete Minecraft experience.';
+                        url = 'modpacks.html'; // URL for redirect
                         break;
                     case 'server-plugins':
                         title = 'Server Plugins';
                         description = 'Explore plugins to improve your Minecraft server functionality.';
+                        url = 'server-plugins.html'; // URL for redirect
                         break;
                 }
 
                 modalTitle.textContent = title;
                 modalDescription.textContent = description;
+                exploreButton.setAttribute('data-url', url); // Set URL for exploration
                 serviceModal.style.display = 'block'; // Show the modal
                 modalOverlay.style.display = 'block'; // Show overlay
             });
         });
+
+        // Explore Service Functionality
+        function exploreService() {
+            const url = exploreButton.getAttribute('data-url');
+            window.location.href = url; // Redirect to the selected service page
+        }
 
         // Close Modal Functionality
         closeModal.addEventListener('click', function() {
@@ -174,6 +216,15 @@
         modalOverlay.addEventListener('click', function() {
             serviceModal.style.display = 'none'; // Hide the modal
             modalOverlay.style.display = 'none'; // Hide overlay
+        });
+
+        // Toggle Service List Visibility
+        toggleServicesButton.addEventListener('click', function() {
+            if (serviceList.style.display === 'none') {
+                serviceList.style.display = 'block'; // Show the service list
+            } else {
+                serviceList.style.display = 'none'; // Hide the service list
+            }
         });
 
         // Hamburger Menu Toggle Functionality
