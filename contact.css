@@ -22,7 +22,7 @@ header {
 }
 
 h1 {
-    color: #4caf50; /* Bright green for title */
+    color: #4caf50 !important; /* Bright green for title */
 }
 
 
