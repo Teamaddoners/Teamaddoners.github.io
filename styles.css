@@ -1,252 +1,70 @@
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
-}
-
-/* Body */
-body {
-    background-color: #1e1e1e;
-    color: #eaeaea;
-    line-height: 1.6;
-    padding: 0 10px;
-}
-
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, #04a777, #137f4b);
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-}
-
-header h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
-}
-
-/* Navigation for larger screens */
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #04a777;
-    color: #000;
-}
-
-/* Hamburger Menu for mobile */
+/* Ensure the hamburger menu and desktop-nav are managed properly */
 .hamburger {
-    display: none;
-    flex-direction: column;
     cursor: pointer;
-    position: absolute;
-    top: 25px;
-    right: 20px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
 }
 
 .hamburger div {
-    width: 30px;
-    height: 4px;
+    height: 3px;
     background-color: #fff;
-    margin: 5px 0;
-    transition: 0.4s;
 }
 
-/* Hide navigation on mobile */
 nav ul {
-    display: none;
+    display: flex;
+    gap: 15px;
+    list-style: none;
 }
 
-/* Mobile Navigation */
 .mobile-nav {
     display: none;
-    background-color: #2b2b2b;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    text-align: center;
+    background-color: #333;
+    height: 100%;
+    width: 70%;
+    padding-top: 50px;
 }
 
 .mobile-nav ul {
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.mobile-nav.show {
     display: block;
 }
 
-.mobile-nav ul li {
-    margin: 10px 0;
+.desktop-nav ul {
+    display: flex;
+    gap: 20px;
 }
 
-.mobile-nav ul li a {
-    color: #04a777;
-    font-size: 1.2rem;
-    padding: 10px;
-    display: block;
+.desktop-nav {
+    display: none;
 }
 
-.mobile-nav ul li a:hover {
-    background-color: #137f4b;
-    color: #fff;
-}
-
-/* Welcome Section */
-#welcome {
-    background: url('minecraft-background.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    margin: 0 auto; /* Ensure it stretches fully */
-    width: 100vw;  /* Make welcome section full width */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-}
-
-#welcome h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px #000;
-}
-
-#welcome p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 5px #000;
-}
-
-/* Services Section */
-#services {
-    background-color: #2b2b2b;
-    padding: 50px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 50px;
-}
-
-#services h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #04a777;
-}
-
-#services ul {
-    list-style-type: none;
-    text-align: center;
-}
-
-#services ul li {
-    font-size: 1.2rem;
-    padding: 10px 0;
-    color: #eaeaea;
-}
-
-#services ul li a {
-    text-decoration: none;
-    color: #04a777;
-    transition: color 0.3s ease;
-}
-
-#services ul li a:hover {
-    color: #fff;
-}
-
-/* Service button */
-.service-button {
-    display: block;
-    background-color: #04a777;
-    color: #000;
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 20px auto;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.service-button:hover {
-    background-color: #137f4b;
-    color: #fff;
-}
-
-/* Footer */
-footer {
-    background-color: #04a777;
-    padding: 20px 0;
-    text-align: center;
-    color: #000;
-    font-size: 1rem;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Media Queries for Mobile */
+/* Show hamburger on mobile screens, hide desktop nav */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex; /* Show hamburger on mobile */
+        display: flex;
     }
 
+    .desktop-nav {
+        display: none;
+    }
+}
+
+/* Show desktop nav on larger screens, hide mobile */
+@media (min-width: 769px) {
     .mobile-nav {
-        display: none; /* Default to hidden */
+        display: none;
     }
 
-    .show {
-        display: block; /* Show mobile menu when active */
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    #welcome {
-        padding: 50px 10px;
-        width: 100%; /* Full width on mobile */
-    }
-
-    #welcome h2 {
-        font-size: 2rem;
-    }
-
-    #services h2 {
-        font-size: 2rem;
-    }
-
-    #services ul li {
-        font-size: 1rem;
-    }
-
-    .service-button {
-        font-size: 1rem;
-        padding: 8px 20px;
+    .desktop-nav {
+        display: block;
     }
 }
