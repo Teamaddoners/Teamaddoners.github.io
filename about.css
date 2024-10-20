@@ -124,4 +124,62 @@ footer {
     .member {
         flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
     }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        height: 100%;
+        width: 70%;
+        padding-top: 50px;
+        z-index: 1000;
+    }
+
+    .mobile-nav ul {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .mobile-nav ul li {
+        padding: 10px 0;
+    }
+
+    .mobile-nav ul li a {
+        text-decoration: none;
+        color: green;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .mobile-nav ul li a:hover {
+        color: #f39c12;
+    }
+
+    .mobile-nav.show {
+        display: block;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 30px;
+        margin-left: auto;
+    }
+
+    .hamburger div {
+        height: 3px;
+        background-color: green;
+    }
 }
