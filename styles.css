@@ -1,4 +1,34 @@
-/* Ensure the hamburger menu and desktop-nav are managed properly */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+/* Header and navigation styling */
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: left;
+}
+
+/* Hamburger styling */
 .hamburger {
     cursor: pointer;
     display: none; /* Hidden by default */
@@ -12,12 +42,23 @@
     background-color: #fff;
 }
 
+/* Navigation */
 nav ul {
-    display: flex;
-    gap: 15px;
     list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Mobile nav */
 .mobile-nav {
     display: none;
     position: fixed;
@@ -27,6 +68,7 @@ nav ul {
     height: 100%;
     width: 70%;
     padding-top: 50px;
+    z-index: 1000; /* Keep it above other content */
 }
 
 .mobile-nav ul {
@@ -34,37 +76,61 @@ nav ul {
     padding-left: 20px;
 }
 
+.mobile-nav ul li {
+    padding: 10px 0;
+}
+
 .mobile-nav.show {
     display: block;
 }
 
-.desktop-nav ul {
-    display: flex;
-    gap: 20px;
-}
-
+/* Desktop nav */
 .desktop-nav {
     display: none;
 }
 
-/* Show hamburger on mobile screens, hide desktop nav */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
     .hamburger {
-        display: flex;
+        display: none; /* Hide hamburger on larger screens */
     }
 
     .desktop-nav {
-        display: none;
+        display: block; /* Show desktop nav on larger screens */
     }
 }
 
-/* Show desktop nav on larger screens, hide mobile */
-@media (min-width: 769px) {
-    .mobile-nav {
-        display: none;
+/* Show mobile nav and hamburger on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
     }
 
     .desktop-nav {
-        display: block;
+        display: none; /* Hide desktop nav on mobile */
     }
+}
+
+/* Welcome section */
+#welcome {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #292929;
+    margin-top: 20px;
+}
+
+#services {
+    padding: 50px 20px;
+    background-color: #333;
+}
+
+button.service-button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button.service-button:hover {
+    background-color: #e67e22;
 }
