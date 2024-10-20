@@ -3,43 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Story - Team Addoners</title>
+    <title>About Us - Team Addoners</title>
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Team Addoners</h1>
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="explore-projects.html">Projects</a></li>
-                </ul>
-            </nav>
-            <nav class="mobile-nav" id="mobile-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="explore-projects.html">Projects</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
     <main>
         <section id="about" class="container">
-            <h2>Our Story</h2>
-            <p>Welcome to Team Addoners! We're a passionate group of creators dedicated to crafting exceptional content and experiences for the Minecraft community. Our goal is to elevate your gameplay through innovative mods, shaders, and tools.</p>
-
-            <h3>The Team</h3>
+            <h2>Meet Our Team</h2>
             <div class="team-profiles">
                 <div class="profile">
                     <img src="ezgif-2-904d5537fa.gif" alt="Harmanpreet Singh (Mcbugs-Addon)">
@@ -81,11 +57,6 @@
         // Functionality for Back to Home Button
         document.querySelector('.home-button').addEventListener('click', function() {
             window.location.href = 'index.html'; // Redirect to the homepage
-        });
-
-        // Hamburger menu toggle functionality
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('show');
         });
     </script>
 </body>
