@@ -19,6 +19,7 @@ body {
 header {
     background-color: #1f1f1f; /* Dark header background */
     padding: 10px 0;
+    position: relative;
 }
 
 h1 {
@@ -37,6 +38,49 @@ nav ul li {
 
 nav a {
     color: #ffffff;
+    text-decoration: none;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Align right */
+}
+
+.hamburger div {
+    height: 3px;
+    background-color: green;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.mobile-nav.show {
+    display: block; /* Show when toggled */
+}
+
+.mobile-nav ul {
+    flex-direction: column;
+}
+
+.mobile-nav ul li {
+    padding: 10px 20px;
+}
+
+.mobile-nav a {
+    color: #4caf50; /* Bright green for links */
     text-decoration: none;
 }
 
@@ -113,73 +157,14 @@ footer {
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        display: none; /* Hide desktop nav */
     }
 
-    nav ul li {
-        margin: 10px 0; /* Margin for stacked items */
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
     }
 
     .member {
         flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-
-    .mobile-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #333;
-        height: 100%;
-        width: 70%;
-        padding-top: 50px;
-        z-index: 1000;
-    }
-
-    .mobile-nav ul {
-        flex-direction: column;
-        padding-left: 20px;
-    }
-
-    .mobile-nav ul li {
-        padding: 10px 0;
-    }
-
-    .mobile-nav ul li a {
-        text-decoration: none;
-        color: green;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .mobile-nav ul li a:hover {
-        color: #f39c12;
-    }
-
-    .mobile-nav.show {
-        display: block;
-    }
-
-    .hamburger {
-        cursor: pointer;
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        width: 30px;
-        margin-left: auto;
-    }
-
-    .hamburger div {
-        height: 3px;
-        background-color: green;
     }
 }
