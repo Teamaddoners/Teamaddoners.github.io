@@ -64,7 +64,7 @@
         }
 
         .service-list {
-            display: block; /* Initially show service list */
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
@@ -106,7 +106,7 @@
         <section id="services" class="container">
             <h2>Our Services</h2>
             <p>We offer a variety of services, including:</p>
-            <button class="toggle-services">Show/Hide Services</button>
+            <button class="toggle-services">Show Services</button>
             <ul class="service-list">
                 <li><button class="service-button" data-service="texture-packs">Texture Packs</button></li>
                 <li><button class="service-button" data-service="minecraft-builds">Minecraft Builds/Maps</button></li>
@@ -222,8 +222,10 @@
         toggleServicesButton.addEventListener('click', function() {
             if (serviceList.style.display === 'none') {
                 serviceList.style.display = 'block'; // Show the service list
+                toggleServicesButton.textContent = 'Hide Services'; // Change button text
             } else {
                 serviceList.style.display = 'none'; // Hide the service list
+                toggleServicesButton.textContent = 'Show Services'; // Change button text
             }
         });
 
