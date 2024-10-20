@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Addoners</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Team Addoners</h1>
-        <nav>
-            <ul>
-                <li><a href="teamaddoners.github.io">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Explore Projects</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Team Addoners</h1>
+            <nav>
+                <ul>
+                    <li><a href="teamaddoners.github.io">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#projects">Explore Projects</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="welcome">
+        <section id="welcome" class="container">
             <h2>Welcome to Team Addoners</h2>
-            <p>Team Addoners is a group of dedicated modders who have made significant contributions to the Minecraft community. They specialize in creating high-quality shader packs, such as Skygleam Shaders, Quartzglow Shaders, and Seraphic Shaders. Their shaders are known for their realistic lighting, water effects, and performance optimization. Team Addoners' commitment to quality and innovation has made them a respected name in the modding community.
-In addition to their shader packs, Team Addoners has also released other mods and tools for Minecraft. They are always working on new projects and are dedicated to improving the Minecraft experience for players.
-            </p>
+            <p>Team Addoners is a group of dedicated modders who have made significant contributions to the Minecraft community. They specialize in creating high-quality shader packs such as Skygleam Shaders, Quartzglow Shaders, and Seraphic Shaders. Their shaders are known for their realistic lighting, water effects, and performance optimization. Team Addoners' commitment to quality and innovation has made them a respected name in the modding community.</p>
+            <p>In addition to shader packs, Team Addoners has also released other mods and tools for Minecraft. They are always working on new projects and are dedicated to improving the Minecraft experience for players.</p>
         </section>
 
-        <section id="services">
+        <section id="services" class="container">
             <h2>Our Services</h2>
             <p>We offer a variety of services, including:</p>
             <ul>
@@ -37,8 +40,8 @@ In addition to their shader packs, Team Addoners has also released other mods an
                 <li>Modpacks</li>
                 <li>Server Plugins</li>
             </ul>
-            <button class="service-button">Select Service</button>
-            <div class="service-menu">
+            <button class="service-button" aria-expanded="false" aria-controls="service-menu">Select Service</button>
+            <div class="service-menu" id="service-menu" hidden>
                 <ul>
                     <li><a href="#">Texture Packs</a></li>
                     <li><a href="#">Minecraft Builds/Maps</a></li>
@@ -53,7 +56,18 @@ In addition to their shader packs, Team Addoners has also released other mods an
     </main>
 
     <footer>
-        <p>&copy; 2024 Team Addoners. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Team Addoners. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        document.querySelector('.service-button').addEventListener('click', function () {
+            const serviceMenu = document.getElementById('service-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            serviceMenu.hidden = isExpanded;
+        });
+    </script>
 </body>
 </html>
