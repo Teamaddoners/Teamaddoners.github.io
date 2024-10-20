@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Addoners</title>
+    <link rel="website icon" type="jpg"
+        href="downloadfile-6~2.jpg">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional Styles for Service Modal */
+        .service-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #444;
+            border: 2px solid green;
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 1001; /* Above other content */
+            width: 300px; /* Set width */
+            color: white;
+            text-align: center;
+        }
+
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            z-index: 1000; /* Above other content */
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -45,27 +85,23 @@
             <h2>Our Services</h2>
             <p>We offer a variety of services, including:</p>
             <ul>
-                <li>Texture Packs</li>
-                <li>Minecraft Builds/Maps</li>
-                <li>Shaderpacks</li>
-                <li>Minecraft Player Skins</li>
-                <li>Mods</li>
-                <li>Modpacks</li>
-                <li>Server Plugins</li>
+                <li><button class="service-button" data-service="texture-packs">Texture Packs</button></li>
+                <li><button class="service-button" data-service="minecraft-builds">Minecraft Builds/Maps</button></li>
+                <li><button class="service-button" data-service="shaderpacks">Shaderpacks</button></li>
+                <li><button class="service-button" data-service="player-skins">Minecraft Player Skins</button></li>
+                <li><button class="service-button" data-service="mods">Mods</button></li>
+                <li><button class="service-button" data-service="modpacks">Modpacks</button></li>
+                <li><button class="service-button" data-service="server-plugins">Server Plugins</button></li>
             </ul>
-            <button class="service-button" aria-expanded="false" aria-controls="service-menu">Select Service</button>
-            <div class="service-menu" id="service-menu" hidden>
-                <ul>
-                    <li><a href="#">Texture Packs</a></li>
-                    <li><a href="#">Minecraft Builds/Maps</a></li>
-                    <li><a href="#">Shaderpacks</a></li>
-                    <li><a href="#">Minecraft Player Skins</a></li>
-                    <li><a href="#">Mods</a></li>
-                    <li><a href="#">Modpacks</a></li>
-                    <li><a href="#">Server Plugins</a></li>
-                </ul>
-            </div>
         </section>
+
+        <!-- Modal for service selection -->
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="service-modal" id="service-modal">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <button class="close-modal" id="close-modal">Close</button>
+        </div>
     </main>
 
     <footer>
@@ -75,24 +111,69 @@
     </footer>
 
     <script>
-        // Service Menu Toggle Functionality
-        let isMenuVisible = false;
-        const serviceButton = document.querySelector('.service-button');
-        const serviceMenu = document.getElementById('service-menu');
+        // Service Button Modal Functionality
+        const serviceButtons = document.querySelectorAll('.service-button');
+        const serviceModal = document.getElementById('service-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const closeModal = document.getElementById('close-modal');
 
-        serviceButton.addEventListener('click', function () {
-            isMenuVisible = !isMenuVisible; // Toggle the visibility state
-            serviceMenu.hidden = !isMenuVisible; // Show or hide based on state
-            serviceButton.setAttribute('aria-expanded', isMenuVisible); // Update ARIA attribute
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const service = button.getAttribute('data-service');
+                let title = '';
+                let description = '';
+
+                // Set title and description based on selected service
+                switch(service) {
+                    case 'texture-packs':
+                        title = 'Texture Packs';
+                        description = 'Explore our high-quality texture packs designed to enhance your Minecraft experience.';
+                        break;
+                    case 'minecraft-builds':
+                        title = 'Minecraft Builds/Maps';
+                        description = 'Check out our creative builds and maps available for download.';
+                        break;
+                    case 'shaderpacks':
+                        title = 'Shaderpacks';
+                        description = 'Discover our stunning shader packs that add realistic lighting and effects.';
+                        break;
+                    case 'player-skins':
+                        title = 'Minecraft Player Skins';
+                        description = 'Customize your character with our unique player skins.';
+                        break;
+                    case 'mods':
+                        title = 'Mods';
+                        description = 'Find a variety of mods to enhance your gameplay.';
+                        break;
+                    case 'modpacks':
+                        title = 'Modpacks';
+                        description = 'Download our curated modpacks for a complete Minecraft experience.';
+                        break;
+                    case 'server-plugins':
+                        title = 'Server Plugins';
+                        description = 'Explore plugins to improve your Minecraft server functionality.';
+                        break;
+                }
+
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                serviceModal.style.display = 'block'; // Show the modal
+                modalOverlay.style.display = 'block'; // Show overlay
+            });
         });
 
-        // Hide menu when clicking outside of it
-        document.addEventListener('click', function (event) {
-            if (!serviceButton.contains(event.target) && !serviceMenu.contains(event.target)) {
-                isMenuVisible = false;
-                serviceMenu.hidden = true; // Hide if clicked outside
-                serviceButton.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
-            }
+        // Close Modal Functionality
+        closeModal.addEventListener('click', function() {
+            serviceModal.style.display = 'none'; // Hide the modal
+            modalOverlay.style.display = 'none'; // Hide overlay
+        });
+
+        // Close Modal when clicking on overlay
+        modalOverlay.addEventListener('click', function() {
+            serviceModal.style.display = 'none'; // Hide the modal
+            modalOverlay.style.display = 'none'; // Hide overlay
         });
 
         // Hamburger Menu Toggle Functionality
