@@ -15,16 +15,6 @@ body {
     padding: 20px;
 }
 
-/* Header Styles */
-header {
-    background-color: #1f1f1f; /* Dark header background */
-    padding: 10px 0;
-}
-
-h1 {
-    color: #4caf50; /* Bright green for title */
-}
-
 /* Section Styles */
 h2, h3 {
     color: #4caf50; /* Bright green for headings */
@@ -37,40 +27,21 @@ section {
     margin-bottom: 20px;
 }
 
-/* Team Members Section */
-.team-profiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.profile {
-    background-color: #3b3b3b; /* Slightly lighter background for members */
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    flex: 1 1 calc(30% - 20px); /* Responsive sizing */
-}
-
-.profile img {
-    width: 80px; /* Adjusted size for member images */
-    height: 80px; /* Adjusted size for member images */
-    border-radius: 50%; /* Circular images */
-}
-
-/* Social Links */
-.social-links {
+/* Contact Options */
+.contact-options {
     margin: 20px 0;
 }
 
-.social-links a {
-    color: #4caf50; /* Bright green for social links */
-    text-decoration: none;
-    margin-right: 15px;
+.option {
+    margin-bottom: 15px;
 }
 
-.social-links a:hover {
+.option a {
+    color: #4caf50; /* Bright green for email and discord link */
+    text-decoration: none; /* Remove underline */
+}
+
+.option a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
@@ -95,9 +66,3 @@ footer {
     text-align: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .profile {
-        flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
-    }
-}
