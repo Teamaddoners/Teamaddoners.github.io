@@ -26,27 +26,34 @@ h1 {
     display: inline-block; /* Aligns the title with the hamburger */
 }
 
+/* Hamburger Menu */
 .hamburger {
     cursor: pointer;
     display: none; /* Hide by default, show on mobile */
+    flex-direction: column;
 }
 
 .hamburger div {
     width: 25px;
     height: 3px;
     background-color: #ffffff; /* White lines for hamburger */
-    margin: 5px 0; /* Spacing between lines */
+    margin: 3px 0; /* Spacing between lines */
 }
 
 /* Navigation Styles */
+nav {
+    display: flex; /* Inline for desktop navigation */
+    justify-content: space-between; /* Space items horizontally */
+    align-items: center; /* Align vertically */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* Spacing for desktop navigation */
 }
 
 nav a {
@@ -71,7 +78,7 @@ nav a {
 }
 
 .mobile-nav ul {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; /* Stack items vertically on mobile */
     padding: 10px 0;
 }
 
@@ -79,55 +86,13 @@ nav a {
     margin: 10px 0; /* Margin for stacked items */
 }
 
-/* Section Styles */
-h2 {
-    color: #4caf50; /* Bright green for headings */
-}
-
-section {
-    background-color: #2b2b2b; /* Darker section background */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-/* Contact Email Styles */
-.contact-email {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.contact-email a {
-    color: #4caf50; /* Bright green for email link */
-    text-decoration: none;
-}
-
-.contact-email a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #1f1f1f; /* Dark footer background */
-    padding: 10px 0;
-    text-align: center;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide desktop nav on mobile */
+    nav { /* Hide desktop navigation on mobile */
+        display: none;
     }
 
-    .hamburger {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    .mobile-nav {
-        display: none; /* Hide mobile nav by default */
-    }
-
-    .mobile-nav.show {
-        display: block; /* Show mobile nav when toggled */
+    .hamburger { /* Show hamburger on mobile */
+        display: flex;
     }
 }
