@@ -19,7 +19,6 @@ body {
 header {
     background-color: #1f1f1f; /* Dark header background */
     padding: 10px 0;
-    position: relative;
 }
 
 h1 {
@@ -60,6 +59,11 @@ section {
     border-radius: 50%; /* Circular images */
 }
 
+.profile-gif {
+    width: 150px; /* Adjust GIF size */
+    height: auto; /* Maintain aspect ratio */
+}
+
 /* Social Links */
 .social-links {
     margin: 20px 0;
@@ -76,6 +80,11 @@ section {
 }
 
 /* Button Styles */
+.button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+}
+
 .home-button {
     background-color: #4caf50; /* Green button background */
     color: #fff; /* White text */
@@ -83,6 +92,7 @@ section {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .home-button:hover {
