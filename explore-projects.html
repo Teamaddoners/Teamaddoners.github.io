@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Projects - Team Addoners</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Explore Our Projects</h1>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="explore-projects.html">Explore Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <nav class="mobile-nav" id="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="explore-projects.html">Explore Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Project of the Year -->
+        <section id="project-of-the-year">
+            <h2 class="section-title">Project of the Year</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/project-of-the-year.png" alt="Project of the Year">
+                    <h3>Project of the Year: Quartzglow Shaders</h3>
+                    <p>Quartzglow Shaders is our most successful project, known for its stunning lighting and realistic water reflections.</p>
+                    <a href="quartzglow-shaders-download.html" class="download-button">Download Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional sections for different categories -->
+        <section id="texture-packs">
+            <h2 class="section-title">Texture Packs</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/texture-pack.png" alt="Skygleam Texture Pack">
+                    <h3>Skygleam Texture Pack</h3>
+                    <p>High-quality textures for skies and other elements.</p>
+                    <a href="texture-pack-download.html" class="download-button">Download Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections for Builds/Maps, Shaderpacks, Skins, Mods, Modpacks, and Plugins as needed -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Team Addoners. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobile-nav').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
