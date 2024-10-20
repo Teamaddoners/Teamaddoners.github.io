@@ -100,7 +100,7 @@ h1 {
 }
 
 .desktop-nav ul li a:hover {
-    color: #f39c12;
+    color: green;
 }
 
 /* Media Queries for Responsive Design */
