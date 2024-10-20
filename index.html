@@ -75,16 +75,45 @@
     </footer>
 
     <script>
-        document.querySelector('.service-button').addEventListener('click', function () {
-            const serviceMenu = document.getElementById('service-menu');
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            serviceMenu.hidden = isExpanded;
+        let isMenuVisible = false;
+
+        const serviceButton = document.querySelector('.service-button');
+        const serviceMenu = document.getElementById('service-menu');
+
+        serviceButton.addEventListener('mouseover', function () {
+            serviceMenu.classList.add('show'); // Show the menu
         });
 
+        serviceButton.addEventListener('mouseout', function () {
+            if (!isMenuVisible) {
+                serviceMenu.classList.remove('show'); // Hide the menu if not clicked
+            }
+        });
+
+        serviceButton.addEventListener('click', function () {
+            isMenuVisible = !isMenuVisible; // Toggle the visibility state
+            serviceMenu.classList.toggle('show', isMenuVisible); // Show or hide based on state
+        });
+
+        // Hide menu when mouse leaves the button and menu
+        serviceMenu.addEventListener('mouseleave', function () {
+            isMenuVisible = false; // Reset visibility state
+            serviceMenu.classList.remove('show'); // Hide the menu
+        });
+
+        // Optional: Hide menu when clicking outside (to enhance usability)
+        document.addEventListener('click', function (event) {
+            if (!serviceButton.contains(event.target) && !serviceMenu.contains(event.target)) {
+                isMenuVisible = false;
+                serviceMenu.classList.remove('show'); // Hide if clicked outside
+            }
+        });
+
+        // Hamburger menu toggle functionality
         document.getElementById('hamburger').addEventListener('click', function() {
             document.getElementById('mobile-nav').classList.toggle('show');
         });
     </script>
 </body>
 </html>
+                    
