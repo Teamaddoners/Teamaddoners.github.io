@@ -3,14 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif; /* Gaming-style font */
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* Body */
 body {
-    background-color: #1e1e1e; /* Dark background */
-    color: #eaeaea; /* Light text */
+    background-color: #1e1e1e;
+    color: #eaeaea;
     line-height: 1.6;
+    padding: 0 10px;
 }
 
 /* Container */
@@ -23,14 +24,14 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #04a777, #137f4b); /* Gaming-style gradient */
+    background: linear-gradient(135deg, #04a777, #137f4b);
     padding: 20px 0;
     text-align: center;
 }
 
 header h1 {
     color: #fff;
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduced for mobile readability */
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     letter-spacing: 2px;
 }
@@ -39,22 +40,24 @@ header h1 {
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 10px;
     list-style: none;
+    padding-top: 10px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.2rem;
-    padding: 10px 20px;
+    font-size: 1rem; /* Smaller font for mobile */
+    padding: 8px 15px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #04a777; /* Hover color */
+    background-color: #04a777;
     color: #000;
 }
 
@@ -63,21 +66,21 @@ nav ul li a:hover {
     background: url('minecraft-background.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: 80px 20px;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
 #welcome h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Adjusted for mobile */
+    margin-bottom: 15px;
     text-shadow: 2px 2px 5px #000;
 }
 
 #welcome p {
-    font-size: 1.1rem;
-    max-width: 800px;
+    font-size: 1rem; /* Slightly smaller for mobile */
+    max-width: 90%;
     margin: 0 auto;
     text-shadow: 1px 1px 5px #000;
 }
@@ -85,7 +88,7 @@ nav ul li a:hover {
 /* Services Section */
 #services {
     background-color: #2b2b2b;
-    padding: 50px 20px;
+    padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
@@ -93,8 +96,8 @@ nav ul li a:hover {
 
 #services h2 {
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     color: #04a777;
 }
 
@@ -104,8 +107,8 @@ nav ul li a:hover {
 }
 
 #services ul li {
-    font-size: 1.2rem;
-    padding: 10px 0;
+    font-size: 1rem; /* Adjusted for mobile */
+    padding: 8px 0;
     color: #eaeaea;
 }
 
@@ -124,8 +127,8 @@ nav ul li a:hover {
     display: block;
     background-color: #04a777;
     color: #000;
-    padding: 10px 30px;
-    font-size: 1.2rem;
+    padding: 8px 20px; /* Smaller padding for mobile */
+    font-size: 1.1rem;
     text-align: center;
     margin: 20px auto;
     border: none;
@@ -149,9 +152,9 @@ nav ul li a:hover {
 
 .service-menu ul li a {
     color: #04a777;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: block;
-    padding: 10px;
+    padding: 8px;
     transition: background-color 0.3s ease;
 }
 
@@ -172,4 +175,67 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Smaller font for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stacks navigation vertically on mobile */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 10px;
+    }
+
+    #welcome h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    #welcome p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    #services h2 {
+        font-size: 1.8rem;
+    }
+
+    #services ul li {
+        font-size: 0.9rem; /* Reduce text size in services section */
+    }
+
+    .service-button {
+        font-size: 1rem;
+        padding: 8px 15px; /* More compact button */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem; /* Further reduction for very small screens */
+    }
+
+    nav ul li a {
+        font-size: 0.85rem; /* Adjust font size */
+    }
+
+    #welcome h2 {
+        font-size: 1.6rem;
+    }
+
+    #services h2 {
+        font-size: 1.6rem;
+    }
+
+    #services ul li {
+        font-size: 0.85rem; /* Text becomes even more compact */
+    }
+
+    .service-button {
+        font-size: 0.9rem; /* Smaller button */
+    }
 }
