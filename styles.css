@@ -129,7 +129,7 @@ h1 {
     text-align: center;
     padding: 50px 20px;
     background-color: #292929;
-    margin-top: 0;
+    margin: 0; /* Remove margin-top */
     border: 2px solid green; /* Change border color to green */
     border-radius: 8px;
 }
@@ -152,7 +152,7 @@ h1 {
     background-color: #333;
     border: 2px solid green; /* Change border color to green */
     border-radius: 8px;
-    margin-top: 0;
+    margin: 0; /* Remove margin-top */
 }
 
 #services h2 {
@@ -186,7 +186,7 @@ button.service-button:hover {
 
 /* Service Menu Styles */
 .service-menu {
-    margin-top: 20px;
+    margin-top: 20px; /* Adjust if necessary */
     max-height: 0; /* Collapsed state */
     opacity: 0; /* Hidden state */
     transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
