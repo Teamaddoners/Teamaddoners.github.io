@@ -12,87 +12,92 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: auto;
+    padding: 20px;
 }
 
 /* Header Styles */
 header {
     background-color: #1f1f1f; /* Dark header background */
     padding: 10px 0;
-    position: relative;
 }
 
 h1 {
     color: #4caf50; /* Bright green for title */
-    display: inline-block; /* Aligns the title with the hamburger */
 }
 
-/* Hamburger Menu */
-.hamburger {
-    cursor: pointer;
-    display: none; /* Hide by default, show on mobile */
-    flex-direction: column;
+/* Section Styles */
+h2, h3 {
+    color: #4caf50; /* Bright green for headings */
 }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff; /* White lines for hamburger */
-    margin: 3px 0; /* Spacing between lines */
+section {
+    background-color: #2b2b2b; /* Darker section background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-/* Navigation Styles */
-nav {
-    display: flex; /* Inline for desktop navigation */
-    justify-content: space-between; /* Space items horizontally */
-    align-items: center; /* Align vertically */
+/* Team Members Section */
+.team-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 20px; /* Spacing for desktop navigation */
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Mobile Navigation */
-.mobile-nav {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 60px; /* Position it below the header */
-    left: 0;
-    width: 100%;
-    background-color: #1f1f1f;
+.profile {
+    background-color: #3b3b3b; /* Slightly lighter background for members */
     border-radius: 5px;
-    z-index: 10; /* Make sure it's above other elements */
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 calc(30% - 20px); /* Responsive sizing */
 }
 
-.mobile-nav.show {
-    display: block; /* Show when toggled */
+.profile img {
+    width: 80px; /* Adjusted size for member images */
+    height: 80px; /* Adjusted size for member images */
+    border-radius: 50%; /* Circular images */
 }
 
-.mobile-nav ul {
-    flex-direction: column; /* Stack items vertically on mobile */
+/* Social Links */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: #4caf50; /* Bright green for social links */
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.social-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styles */
+.home-button {
+    background-color: #4caf50; /* Green button background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f; /* Dark footer background */
     padding: 10px 0;
-}
-
-.mobile-nav ul li {
-    margin: 10px 0; /* Margin for stacked items */
+    text-align: center;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    nav { /* Hide desktop navigation on mobile */
-        display: none;
-    }
-
-    .hamburger { /* Show hamburger on mobile */
-        display: flex;
+    .profile {
+        flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
     }
 }
