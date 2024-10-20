@@ -74,7 +74,7 @@ h1 {
 }
 
 .mobile-nav ul li a:hover {
-    color: #f39c12;
+    color: darkgreen; /* Change hover color for mobile nav */
 }
 
 .mobile-nav.show {
@@ -100,7 +100,7 @@ h1 {
 }
 
 .desktop-nav ul li a:hover {
-    color: green;
+    color: darkgreen; /* Change hover color for desktop nav */
 }
 
 /* Media Queries for Responsive Design */
@@ -229,4 +229,17 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Additional Hover Styles */
+.hamburger div:hover {
+    background-color: darkgreen; /* Darker shade on hover */
+}
+
+.mobile-nav ul li a:active {
+    background-color: darkgreen; /* Darker shade on click */
+}
+
+.desktop-nav ul li a:active {
+    background-color: darkgreen; /* Darker shade on click */
 }
