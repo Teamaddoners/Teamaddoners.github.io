@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #141414; /* Dark background */
+    color: #ffffff; /* White text color */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #1f1f1f; /* Dark header background */
+    padding: 10px 0;
+}
+
+h1 {
+    color: #4caf50; /* Bright green for title */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Section Styles */
+h2, h3 {
+    color: #4caf50; /* Bright green for headings */
+}
+
+section {
+    background-color: #2b2b2b; /* Darker section background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Team Members Section */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.member {
+    background-color: #3b3b3b; /* Slightly lighter background for members */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 calc(30% - 20px); /* Responsive sizing */
+}
+
+.member img {
+    width: 100px; /* Fixed size for member images */
+    height: 100px; /* Fixed size for member images */
+    border-radius: 50%; /* Circular images */
+}
+
+/* Social Links */
+.socials {
+    margin: 20px 0;
+}
+
+.socials a {
+    color: #4caf50; /* Bright green for social links */
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.socials a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styles */
+.back-button {
+    background-color: #4caf50; /* Green button background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f; /* Dark footer background */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Margin for stacked items */
+    }
+
+    .member {
+        flex: 1 1 calc(45% - 20px); /* Adjust member size for smaller screens */
+    }
+}
