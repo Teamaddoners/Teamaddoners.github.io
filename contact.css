@@ -36,8 +36,9 @@ section {
     margin-bottom: 15px;
 }
 
+/* Ensure links are green */
 .option a {
-    color: #4caf50; /* Bright green for email and discord link */
+    color: #4caf50 !important; /* Force links to be bright green */
     text-decoration: none; /* Remove underline */
 }
 
@@ -65,4 +66,3 @@ footer {
     padding: 10px 0;
     text-align: center;
 }
-
