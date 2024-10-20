@@ -10,14 +10,12 @@
     <header>
         <div class="container">
             <h1>Team Addoners</h1>
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <!-- Mobile Navigation -->
-            <nav class="mobile-nav">
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="teamaddoners.github.io">Home</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -25,8 +23,7 @@
                     <li><a href="#projects">Explore Projects</a></li>
                 </ul>
             </nav>
-            <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
+            <nav class="mobile-nav" id="mobile-nav">
                 <ul>
                     <li><a href="teamaddoners.github.io">Home</a></li>
                     <li><a href="#about">About Us</a></li>
@@ -78,22 +75,16 @@
     </footer>
 
     <script>
-        // Toggle mobile navigation menu
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.toggle('show');
-        });
-
-        // Toggle service menu dropdown
         document.querySelector('.service-button').addEventListener('click', function () {
             const serviceMenu = document.getElementById('service-menu');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
             serviceMenu.hidden = isExpanded;
         });
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobile-nav').classList.toggle('show');
+        });
     </script>
 </body>
 </html>
-    
