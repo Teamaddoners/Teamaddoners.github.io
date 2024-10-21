@@ -34,12 +34,13 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
-    display: none; /* Hidden initially for mobile */
-    flex-direction: column;
+    display: flex; /* Show menu on desktop */
+    flex-direction: row;
+    align-items: center; /* Center items vertically */
 }
 
 nav ul li {
-    margin-bottom: 10px;
+    margin-right: 20px; /* Add spacing between links */
 }
 
 nav ul li a {
@@ -70,6 +71,7 @@ nav ul li a:hover {
 
 .hamburger.active + nav ul {
     display: flex; /* Show menu when active */
+    flex-direction: column; /* Stack links vertically on mobile */
 }
 
 /* Desktop Nav */
@@ -103,6 +105,7 @@ section {
     margin: 0;
     border: 2px solid #4caf50; /* Green border for welcome section */
     border-radius: 8px;
+    outline: 2px solid #4caf50; /* Add outline to the welcome section */
 }
 
 #welcome h2 {
