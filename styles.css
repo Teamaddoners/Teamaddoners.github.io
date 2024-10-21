@@ -1,11 +1,10 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #141414; /* Dark background */
-    color: #ffffff; /* White text color */
+    color: #ffffff; /* White text */
 }
 
 .container {
@@ -18,16 +17,16 @@ body {
 /* Header Styles */
 header {
     background-color: #1f1f1f; /* Dark header background */
-    padding: 10px 0;
+    padding: 20px;
 }
 
 h1 {
-    color: #4caf50 !important; /* Bright green for title */
+    color: #4caf50; /* Green for main title */
 }
 
 /* Navbar Styles */
 nav {
-    background-color: #fff; /* White navbar background */
+    background-color: #fff; /* White background for navbar */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,19 +44,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #000; /* Black text for navbar items */
+    color: #000; /* Black for links */
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
 }
 
 nav ul li a:hover {
-    color: #4caf50; /* Green hover color for links */
+    color: #4caf50; /* Green on hover */
 }
 
 /* Dropdown Menu */
 nav ul li ul {
-    display: none; /* Hide dropdowns by default */
+    display: none;
     position: absolute;
     background-color: #fff;
     padding: 10px;
@@ -65,7 +64,7 @@ nav ul li ul {
 }
 
 nav ul li:hover ul {
-    display: block; /* Show dropdown on hover */
+    display: block;
 }
 
 nav ul li ul li {
@@ -73,52 +72,98 @@ nav ul li ul li {
 }
 
 nav ul li ul li a {
-    color: #000; /* Black text for dropdown */
+    color: #000; /* Black for dropdown links */
 }
 
 /* Section Styles */
 h2, h3 {
-    color: #4caf50; /* Bright green for headings */
+    color: #4caf50; /* Green for headings */
 }
 
 section {
-    background-color: #2b2b2b; /* Darker section background */
+    background-color: #2b2b2b; /* Dark background */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
-/* Button Styles */
-button, .home-button {
-    background-color: #4caf50; /* Green button background */
-    color: #fff; /* White text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+/* Contact Options */
+.contact-options .option a {
+    color: #4caf50 !important; /* Force green links */
+    text-decoration: none;
 }
 
-button:hover, .home-button:hover {
+.contact-options .option a:hover {
+    text-decoration: underline;
+}
+
+/* Services Section Styles */
+#services {
+    padding: 50px 20px;
+    background-color: #333;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 8px;
+    margin: 0;
+}
+
+#services h2 {
+    font-size: 28px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+#services ul {
+    list-style: none;
+}
+
+#services ul li {
+    margin-bottom: 10px;
+    background-color: #444; /* Button background */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#services ul li img {
+    width: 24px; /* Icon size */
+    height: 24px;
+    margin-right: 10px;
+}
+
+button.service-button {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Green buttons */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+button.service-button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
 /* Footer Styles */
 footer {
-    background-color: #1f1f1f; /* Dark footer background */
+    background-color: #1f1f1f;
     padding: 10px 0;
     text-align: center;
+    border-top: 2px solid #4caf50;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-    nav {
-        align-items: stretch;
-    }
-    
     nav ul li {
         text-align: left;
     }
-    
+
     .container {
         padding: 10px;
     }
