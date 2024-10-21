@@ -1,151 +1,125 @@
-/* Reset and Base Styling */
-* {
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-}
-
-/* Header and Navigation Styling */
-header {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-bottom: 2px solid green;
+    background-color: #141414; /* Dark background */
+    color: #ffffff; /* White text color */
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Force Navbar to be on the Left */
-.desktop-nav {
-    display: block;
-    width: 200px; /* Fixed width for left-aligned navbar */
-    position: absolute; /* Positioned absolutely to the left */
-    left: 0;
-    top: 80px; /* Space below header */
-    background-color: white; /* White background */
+    margin: auto;
     padding: 20px;
-    border-radius: 5px;
 }
 
-.desktop-nav ul {
-    list-style: none;
-    display: block; /* Block display for vertical arrangement */
-    gap: 20px;
-}
-
-.desktop-nav ul li {
-    margin-bottom: 10px;
-}
-
-.desktop-nav ul li a {
-    text-decoration: none;
-    color: green; /* Green text */
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.desktop-nav ul li a:hover {
-    color: darkgreen; /* Dark green on hover */
-}
-
-/* Mobile Nav */
-.mobile-nav {
-    display: none; /* Hidden on mobile by default */
-    background-color: white; /* White background for mobile nav */
-    padding-top: 50px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%; /* Full screen on mobile */
-    width: 250px;
-}
-
-.mobile-nav ul {
-    flex-direction: column;
-    padding-left: 20px;
-}
-
-.mobile-nav ul li {
+/* Header Styles */
+header {
+    background-color: #1f1f1f; /* Dark header background */
     padding: 10px 0;
 }
 
-.mobile-nav ul li a {
-    text-decoration: none;
-    color: green; /* Green text */
-    font-size: 18px;
-    font-weight: bold;
+h1 {
+    color: #4caf50 !important; /* Bright green for title */
 }
 
-.mobile-nav ul li a:hover {
-    color: darkgreen;
-}
-
-.mobile-nav.show {
-    display: block; /* Show when hamburger menu is toggled */
-}
-
-/* Hamburger Icon for Mobile */
-.hamburger {
-    cursor: pointer;
-    display: none; /* Hidden by default on larger screens */
+/* Navbar Styles */
+nav {
+    background-color: #fff; /* White navbar background */
+    display: flex;
     flex-direction: column;
-    gap: 5px;
-    width: 30px;
-    margin-left: auto;
+    align-items: flex-start;
+    padding: 10px;
 }
 
-.hamburger div {
-    height: 3px;
-    background-color: green;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex; /* Show hamburger menu on mobile */
-    }
-
-    .desktop-nav {
-        display: none; /* Hide desktop nav on smaller screens */
-    }
-
-    .mobile-nav {
-        display: none; /* Initially hidden */
-    }
-
-    .mobile-nav.show {
-        display: block; /* Display mobile nav when menu is opened */
-    }
-}
-
-/* Welcome Section Styling */
-#welcome {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #292929;
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    border: 2px solid green;
-    border-radius: 8px;
 }
 
-#welcome h2 {
-    font-size: 28px;
-    color: green;
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #000; /* Black text for navbar items */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #4caf50; /* Green hover color for links */
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    display: none; /* Hide dropdowns by default */
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+nav ul li:hover ul {
+    display: block; /* Show dropdown on hover */
+}
+
+nav ul li ul li {
+    margin: 0;
+}
+
+nav ul li ul li a {
+    color: #000; /* Black text for dropdown */
+}
+
+/* Section Styles */
+h2, h3 {
+    color: #4caf50; /* Bright green for headings */
+}
+
+section {
+    background-color: #2b2b2b; /* Darker section background */
+    padding: 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-/* Footer Styling */
+/* Button Styles */
+button, .home-button {
+    background-color: #4caf50; /* Green button background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .home-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer Styles */
 footer {
-    background-color: #1a1a1a;
-    padding: 20px;
+    background-color: #1f1f1f; /* Dark footer background */
+    padding: 10px 0;
     text-align: center;
-    border-top: 2px solid green;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    nav {
+        align-items: stretch;
+    }
+    
+    nav ul li {
+        text-align: left;
+    }
+    
+    .container {
+        padding: 10px;
+    }
 }
