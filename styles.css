@@ -27,16 +27,15 @@ h1 {
 /* Navbar Styles */
 nav {
     background-color: #fff; /* White background for navbar */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 10px;
+    position: relative;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    display: none; /* Hidden initially for mobile */
+    flex-direction: column;
 }
 
 nav ul li {
@@ -54,25 +53,35 @@ nav ul li a:hover {
     color: #4caf50; /* Green on hover */
 }
 
-/* Dropdown Menu */
-nav ul li ul {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+    margin-left: auto;
 }
 
-nav ul li:hover ul {
-    display: block;
+.hamburger div {
+    height: 3px;
+    background-color: green; /* Green for hamburger lines */
 }
 
-nav ul li ul li {
-    margin: 0;
+.hamburger.active + nav ul {
+    display: flex; /* Show menu when active */
 }
 
-nav ul li ul li a {
-    color: #000; /* Black for dropdown links */
+/* Desktop Nav */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex; /* Show menu on desktop */
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on desktop */
+    }
 }
 
 /* Section Styles */
@@ -87,21 +96,29 @@ section {
     margin-bottom: 20px;
 }
 
-/* Contact Options */
-.contact-options .option a {
-    color: #4caf50 !important; /* Force green links */
-    text-decoration: none;
+/* Welcome Section Styles */
+#welcome {
+    padding: 50px 20px;
+    background-color: #292929;
+    margin: 0;
+    border: 2px solid #4caf50; /* Green border for welcome section */
+    border-radius: 8px;
 }
 
-.contact-options .option a:hover {
-    text-decoration: underline;
+#welcome h2 {
+    font-size: 28px;
+    color: #4caf50;
+}
+
+#welcome p {
+    color: #fff;
 }
 
 /* Services Section Styles */
 #services {
     padding: 50px 20px;
     background-color: #333;
-    border: 2px solid #4caf50; /* Green border */
+    border: 2px solid #4caf50; /* Green border for services section */
     border-radius: 8px;
     margin: 0;
 }
@@ -126,7 +143,7 @@ section {
 }
 
 #services ul li img {
-    width: 24px; /* Icon size */
+    width: 24px;
     height: 24px;
     margin-right: 10px;
 }
@@ -139,7 +156,6 @@ button.service-button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    position: relative;
 }
 
 button.service-button:hover {
@@ -158,13 +174,7 @@ footer p {
     margin: 0;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    nav ul li {
-        text-align: left;
-    }
-
-    .container {
-        padding: 10px;
-    }
+/* Additional Styles */
+nav ul li a:active {
+    background-color: #4caf50; /* Active state */
 }
