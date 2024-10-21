@@ -14,7 +14,7 @@ body {
 header {
     background-color: #1a1a1a;
     padding: 20px;
-    border-bottom: 2px solid green; /* Change border color to green */
+    border-bottom: 2px solid green;
 }
 
 .container {
@@ -23,38 +23,49 @@ header {
     padding: 0 15px;
 }
 
-h1 {
-    font-size: 24px;
-    text-align: left;
-    color: green; /* Change text color to green */
+/* Force Navbar to be on the Left */
+.desktop-nav {
+    display: block;
+    width: 200px; /* Fixed width for left-aligned navbar */
+    position: absolute; /* Positioned absolutely to the left */
+    left: 0;
+    top: 80px; /* Space below header */
+    background-color: white; /* White background */
+    padding: 20px;
+    border-radius: 5px;
 }
 
-/* Hamburger Icon for Mobile */
-.hamburger {
-    cursor: pointer;
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    gap: 5px;
-    width: 30px;
-    margin-left: auto;
+.desktop-nav ul {
+    list-style: none;
+    display: block; /* Block display for vertical arrangement */
+    gap: 20px;
 }
 
-.hamburger div {
-    height: 3px;
-    background-color: green; /* Change background color to green */
+.desktop-nav ul li {
+    margin-bottom: 10px;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: green; /* Green text */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.desktop-nav ul li a:hover {
+    color: darkgreen; /* Dark green on hover */
 }
 
 /* Mobile Nav */
 .mobile-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    height: 100%;
-    width: 70%;
+    display: none; /* Hidden on mobile by default */
+    background-color: white; /* White background for mobile nav */
     padding-top: 50px;
-    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%; /* Full screen on mobile */
+    width: 250px;
 }
 
 .mobile-nav ul {
@@ -68,59 +79,50 @@ h1 {
 
 .mobile-nav ul li a {
     text-decoration: none;
-    color: green; /* Change text color to green */
+    color: green; /* Green text */
     font-size: 18px;
-    font-weight: bold; /* Make font bold */
+    font-weight: bold;
 }
 
 .mobile-nav ul li a:hover {
-    color: darkgreen; /* Change hover color for mobile nav */
+    color: darkgreen;
 }
 
 .mobile-nav.show {
-    display: block;
+    display: block; /* Show when hamburger menu is toggled */
 }
 
-/* Desktop Nav */
-.desktop-nav {
-    display: none;
+/* Hamburger Icon for Mobile */
+.hamburger {
+    cursor: pointer;
+    display: none; /* Hidden by default on larger screens */
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    margin-left: auto;
 }
 
-.desktop-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.desktop-nav ul li a {
-    text-decoration: none;
-    color: green; /* Change text color to green */
-    font-size: 18px;
-    font-weight: bold; /* Make font bold */
-}
-
-.desktop-nav ul li a:hover {
-    color: darkgreen; /* Change hover color for desktop nav */
+.hamburger div {
+    height: 3px;
+    background-color: green;
 }
 
 /* Media Queries for Responsive Design */
-@media (min-width: 769px) {
-    .hamburger {
-        display: none;
-    }
-
-    .desktop-nav {
-        display: block;
-    }
-}
-
 @media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: flex; /* Show hamburger menu on mobile */
     }
 
     .desktop-nav {
-        display: none;
+        display: none; /* Hide desktop nav on smaller screens */
+    }
+
+    .mobile-nav {
+        display: none; /* Initially hidden */
+    }
+
+    .mobile-nav.show {
+        display: block; /* Display mobile nav when menu is opened */
     }
 }
 
@@ -129,117 +131,21 @@ h1 {
     text-align: center;
     padding: 50px 20px;
     background-color: #292929;
-    margin: 0; /* Remove margin-top */
-    border: 2px solid green; /* Change border color to green */
+    margin: 0;
+    border: 2px solid green;
     border-radius: 8px;
 }
 
 #welcome h2 {
     font-size: 28px;
-    color: green; /* Change heading color to green */
+    color: green;
     margin-bottom: 20px;
-}
-
-#welcome p {
-    font-size: 12px; /* Updated font size */
-    line-height: 1.3;
-    color: #fff; /* Change paragraph color to white */
-}
-
-/* Services Section */
-#services {
-    padding: 50px 20px;
-    background-color: #333;
-    border: 2px solid green; /* Change border color to green */
-    border-radius: 8px;
-    margin: 0; /* Remove margin-top */
-}
-
-#services h2 {
-    font-size: 28px;
-    color: green; /* Change heading color to green */
-    margin-bottom: 20px;
-}
-
-#services ul {
-    list-style: none;
-}
-
-#services ul li {
-    margin-bottom: 10px;
-}
-
-button.service-button {
-    padding: 10px 20px;
-    background-color: green; /* Change button color to green */
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative; /* Position for animation */
-}
-
-button.service-button:hover {
-    background-color: darkgreen; /* Darker shade on hover for visual feedback */
-}
-
-/* Service Menu Styles */
-.service-menu {
-    margin-top: 20px; /* Adjust if necessary */
-    max-height: 0; /* Collapsed state */
-    opacity: 0; /* Hidden state */
-    transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
-    overflow: hidden; /* Prevent overflow when hidden */
-}
-
-.service-menu.show {
-    max-height: 500px; /* Adjust as necessary for your menu items */
-    opacity: 1; /* Fully visible when expanded */
-}
-
-/* Optional: Styling for the menu items */
-.service-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.service-menu ul li {
-    padding: 10px;
-    background-color: #444; /* Background color for the menu items */
-    border-bottom: 1px solid green; /* Border between items */
-}
-
-.service-menu ul li a {
-    color: green; /* Link color */
-    text-decoration: none; /* No underline */
-}
-
-.service-menu ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #1a1a1a; /* Changed footer background to dark */
+    background-color: #1a1a1a;
     padding: 20px;
     text-align: center;
-    border-top: 2px solid green; /* Change border color to green */
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Additional Hover Styles */
-.hamburger div:hover {
-    background-color: darkgreen; /* Darker shade on hover */
-}
-
-.mobile-nav ul li a:active {
-    background-color: darkgreen; /* Darker shade on click */
-}
-
-.desktop-nav ul li a:active {
-    background-color: darkgreen; /* Darker shade on click */
+    border-top: 2px solid green;
 }
