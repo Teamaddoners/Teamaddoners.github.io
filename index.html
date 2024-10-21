@@ -77,15 +77,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="teamaddoners.github.io">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="explore-projects.html">Explore Projects</a></li>
-                </ul>
-            </nav>
-            <nav class="mobile-nav" id="mobile-nav">
+            <nav>
                 <ul>
                     <li><a href="teamaddoners.github.io">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -118,7 +110,6 @@
             </ul>
         </section>
 
-        <!-- Modal for service selection -->
         <div class="modal-overlay" id="modal-overlay"></div>
         <div class="service-modal" id="service-modal">
             <h3 id="modal-title"></h3>
@@ -204,43 +195,3 @@
         function exploreService() {
             const url = exploreButton.getAttribute('data-url');
             window.location.href = url; // Redirect to the selected service page
-        }
-
-        // Close Modal Functionality
-        closeModal.addEventListener('click', function() {
-            serviceModal.style.display = 'none'; // Hide the modal
-            modalOverlay.style.display = 'none'; // Hide overlay
-        });
-
-        // Close Modal when clicking on overlay
-        modalOverlay.addEventListener('click', function() {
-            serviceModal.style.display = 'none'; // Hide the modal
-            modalOverlay.style.display = 'none'; // Hide overlay
-        });
-
-        // Toggle Service List Visibility
-        toggleServicesButton.addEventListener('click', function() {
-            if (serviceList.style.display === 'none') {
-                serviceList.style.display = 'block'; // Show the service list
-                toggleServicesButton.textContent = 'Hide Services'; // Change button text
-            } else {
-                serviceList.style.display = 'none'; // Hide the service list
-                toggleServicesButton.textContent = 'Show Services'; // Change button text
-            }
-        });
-
-        // Hamburger Menu Toggle Functionality
-        document.getElementById('hamburger').addEventListener('click', function() {
-            document.getElementById('mobile-nav').classList.toggle('show');
-        });
-
-        // Close the mobile menu when a link is clicked
-        const mobileLinks = document.querySelectorAll('#mobile-nav a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobile-nav').classList.remove('show'); // Hide the mobile menu
-            });
-        });
-    </script>
-</body>
-</html>
