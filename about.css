@@ -66,17 +66,39 @@ section {
 
 /* Social Links */
 .social-links {
+    display: none; /* Hidden by default */
     margin: 20px 0;
+    text-align: center;
 }
 
 .social-links a {
-    color: #4caf50; /* Bright green for social links */
+    display: inline-block;
+    background-color: #4caf50; /* Button background */
+    color: #ffffff; /* Button text color */
     text-decoration: none;
-    margin-right: 15px;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .social-links a:hover {
-    text-decoration: underline; /* Underline on hover */
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Show/Hide Button Styles */
+.toggle-button {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #45a049;
 }
 
 /* Button Styles */
