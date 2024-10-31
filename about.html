@@ -38,6 +38,9 @@
             </div>
 
             <h3>Connect With Us</h3>
+            <div class="button-container">
+                <button class="toggle-button">Show/Hide Social Links</button>
+            </div>
             <div class="social-links">
                 <a href="https://youtube.com/@mcbugs_addon?si=Q7JYrYR1RyqgD7Vj" target="_blank">YouTube</a>
                 <a href="https://www.curseforge.com/members/mcbugsaddon/projects" target="_blank">Curseforge</a>
@@ -63,7 +66,16 @@
         document.querySelector('.home-button').addEventListener('click', function() {
             window.location.href = 'index.html'; // Redirect to the homepage
         });
+
+        // Functionality to toggle the visibility of social media links
+        document.querySelector('.toggle-button').addEventListener('click', function() {
+            const socialLinks = document.querySelector('.social-links');
+            if (socialLinks.style.display === 'none' || socialLinks.style.display === '') {
+                socialLinks.style.display = 'block'; // Show links
+            } else {
+                socialLinks.style.display = 'none'; // Hide links
+            }
+        });
     </script>
 </body>
 </html>
-
