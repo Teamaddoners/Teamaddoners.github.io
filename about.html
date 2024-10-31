@@ -39,7 +39,7 @@
 
             <h3>Connect With Us</h3>
             <div class="button-container">
-                <button class="toggle-button">Show/Hide Social Links</button>
+                <button class="toggle-button">Show Social Links</button>
             </div>
             <div class="social-links">
                 <a href="https://youtube.com/@mcbugs_addon?si=Q7JYrYR1RyqgD7Vj" target="_blank">YouTube</a>
@@ -70,10 +70,14 @@
         // Functionality to toggle the visibility of social media links
         document.querySelector('.toggle-button').addEventListener('click', function() {
             const socialLinks = document.querySelector('.social-links');
+            const toggleButton = document.querySelector('.toggle-button');
+            
             if (socialLinks.style.display === 'none' || socialLinks.style.display === '') {
                 socialLinks.style.display = 'block'; // Show links
+                toggleButton.textContent = 'Hide Social Links'; // Update button text
             } else {
                 socialLinks.style.display = 'none'; // Hide links
+                toggleButton.textContent = 'Show Social Links'; // Update button text
             }
         });
     </script>
