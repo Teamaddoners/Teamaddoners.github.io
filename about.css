@@ -94,11 +94,12 @@ section {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .toggle-button:hover {
     background-color: #45a049;
+    transform: scale(1.05); /* Scale up on hover */
 }
 
 /* Button Styles */
