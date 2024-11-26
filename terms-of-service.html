@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service</title>
-  <style>
-    /* CSS */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1c1c2e;
-      color: #e6e6fa;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Fix</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .header {
-      background-color: #4b0082;
-      text-align: center;
-      padding: 20px;
-    }
+        header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-    .header h1 {
-      margin: 0;
-      color: #ffffff;
-    }
+        main {
+            padding: 20px;
+        }
 
-    .content {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #2e2e3d;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-    .content h2 {
-      color: #dda0dd;
-    }
+        /* Terms of Service Scrollable Section */
+        .terms-container {
+            max-height: 300px; /* Limit the height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
 
-    .content a {
-      color: #ad85ff;
-      text-decoration: none;
-    }
+        /* Email Input Field */
+        .email-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
 
-    .content a:hover {
-      text-decoration: underline;
-    }
+        input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    .footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #4b0082;
-      color: #ffffff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .footer p {
-      margin: 5px 0;
-    }
-  </style>
+        button:hover {
+            background: #45a049;
+        }
+
+        /* Mobile Footer Fix */
+        @media (max-width: 768px) {
+            footer {
+                position: static; /* Ensure footer is not fixed */
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Team Addoners - Terms of Service</h1>
-  </header>
-  <main class="content">
-    <section>
-      <h2>Introduction</h2>
-      <p>Welcome to Team Addoners! By using our services, you agree to the following terms.</p>
-    </section>
-    <section>
-      <h2>OAuth Bot Data Collection</h2>
-      <p>We collect identity and email for contact purposes only, ensuring your data is secure.</p>
-    </section>
-    <section>
-      <h2>Community Guidelines</h2>
-      <p>Join our Discord server to enjoy exclusive features and maintain respectful behavior.</p>
-    </section>
-    <section>
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:teamaddonershelp@gmail.com">teamaddonershelp@gmail.com</a></p>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>Effective Date: November 25, 2024</p>
-    <p>© 2024 Team Addoners. All rights reserved.</p>
-  </footer>
+    <header>
+        <h1>Responsive Website</h1>
+    </header>
+
+    <main>
+        <h2>Subscribe to Our Newsletter</h2>
+        <div class="email-container">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="button">Subscribe</button>
+        </div>
+
+        <h2>Terms of Service</h2>
+        <div class="terms-container">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula ex at dui fermentum, id luctus
+                erat tincidunt. Praesent malesuada eu arcu at gravida. Ut tristique id nisi non aliquam. Sed sagittis
+                velit vel quam vehicula, eget bibendum purus consectetur. Suspendisse potenti. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            </p>
+            <p>
+                Cras id quam nec justo tincidunt faucibus sed nec nulla. Ut id purus vitae enim dapibus pretium in non
+                metus. Nullam vitae elit vel eros cursus varius. Vivamus lacinia lorem vel est posuere, in scelerisque
+                eros egestas. Integer id malesuada quam. Donec ultrices ligula at mauris auctor, quis hendrerit justo
+                tristique.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2024 Your Website</p>
+    </footer>
 </body>
 </html>
